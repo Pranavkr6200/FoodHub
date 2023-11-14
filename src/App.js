@@ -5,7 +5,7 @@ import Body from "./component/Body";
 import ResCard from "./component/ResCard";
 const App = () => {
   return (
-    <div id="App" className="bg-slate-500 w-full">
+    <div id="App" className="bg-slate-500 w-full pb-[20px]">
       <Header />
       <Body />
     </div>
