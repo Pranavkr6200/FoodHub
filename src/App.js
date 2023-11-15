@@ -2,8 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./component/Header";
 import Body from "./component/Body";
-import ResCard from "./component/ResCard";
-import CartItem from "./component/CartItem";
 import { useState } from "react";
 
 const App = () => {
