@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import ResCard from "./ResCard";
 
-const Body = () => {
+const Body = (props) => {
   let [listOfRes, setListOfRes] = useState([]);
 
   useEffect(() => {
@@ -29,10 +29,14 @@ const Body = () => {
       console.log("Error", err);
     }
   };
-  return (
+  return !listOfRes || listOfRes.length == 0 ? (
+    <h1 className="text-white text-[40px] bg-slate-500 w-full h-screen flex justify-center items-center">
+      Loading...
+    </h1>
+  ) : (
     <div className="flex flex-col gap-[20px]">
       {listOfRes?.map((res) => (
-        <ResCard resData={res} />
+        <ResCard resData={res} handleAddToCart={props.handleAddToCart} />
       ))}
     </div>
   );

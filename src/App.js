@@ -3,11 +3,21 @@ import ReactDOM from "react-dom/client";
 import Header from "./component/Header";
 import Body from "./component/Body";
 import ResCard from "./component/ResCard";
+import CartItem from "./component/CartItem";
+import { useState } from "react";
+
 const App = () => {
+  const [val, setVal] = useState(0);
+
+  function handleAddToCart(prevState) {
+    setVal((prevState) => prevState + 1);
+  }
+
   return (
     <div id="App" className="bg-slate-500 w-full pb-[20px]">
-      <Header />
-      <Body />
+      <Header count={val} />
+      <Body handleAddToCart={handleAddToCart} />
+      {/* <CartItem /> */}
     </div>
   );
 };
